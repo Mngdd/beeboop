@@ -24,7 +24,7 @@ class Example(QMainWindow):
 
     def draw_smth(self, qp):  # 1 triang sp 2 circ lmb 3 sq rmb
         a, b, c = randint(0, 255), randint(0, 255), randint(0, 255)
-        pen = QBrush(QColor('yellow'), Qt.SolidPattern)
+        pen = QBrush(QColor(a, b, c), Qt.SolidPattern)
         qp.setBrush(pen)
         mn, mxy, mxx = 10, self.size().height(), self.size().width()
         size1, x, y = randint(mn, 150), randint(mn, mxx), randint(mn, mxy)
