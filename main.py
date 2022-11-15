@@ -4,13 +4,14 @@ from random import randint
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPainter, QBrush, QColor
 from PyQt5.QtWidgets import QMainWindow, QApplication
+from etomoigribyaegoem import *
 
 
-class Example(QMainWindow):
+class Example(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('UI.ui', self)
         self.paint_mode = True
+        self.setupUi(self)
         self.b.clicked.connect(self.repaint)
 
     def paintEvent(self, event):
@@ -35,4 +36,4 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = Example()
     ex.show()
-    sys.exit(app.exec())
+    sys.exit(app.exec_())
